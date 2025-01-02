@@ -16,8 +16,8 @@ if [[ "${OS}" = "ubuntu" ]]; then
     # Set apt retry limit to higher than default to
     # make the data retrival more reliable
     sudo sh -c ' echo "Acquire::Retries \"10\";" > /etc/apt/apt.conf.d/80-retries '
-    sudo apt-get update
-    sudo apt-get -y install python3-pip python3-dev python3-venv jq curl wget pkg-config bash-completion
+#    sudo apt-get update
+#    sudo apt-get -y install python3-pip python3-dev python3-venv jq curl wget pkg-config bash-completion
 
     # Set update-alternatives to python3
     case "${DISTRO}" in
@@ -71,7 +71,7 @@ sudo python -m venv --system-site-packages "${ANSIBLE_VENV}"
 sudo "${ANSIBLE_VENV}/bin/pip" install --ignore-installed ansible=="${ANSIBLE_VERSION}"
 
 # Install requirements
-"${ANSIBLE}-galaxy" install -r vm-setup/requirements.yml
+#"${ANSIBLE}-galaxy" install -r vm-setup/requirements.yml
 
 # Install required packages
 ANSIBLE_FORCE_COLOR=true "${ANSIBLE}-playbook" \
@@ -113,7 +113,8 @@ if [[ "${EPHEMERAL_CLUSTER}" = "minikube" ]]; then
 else
     # shellcheck disable=SC2312
     if ! command -v kind &>/dev/null || [[ "v$(kind version -q)" != "${KIND_VERSION}" ]]; then
-        download_and_install_kind
+   echo "download_and_install_kind"
+   #  	    download_and_install_kind
     fi
     if [[ "${EPHEMERAL_CLUSTER}" = "tilt" ]]; then
         download_and_install_tilt

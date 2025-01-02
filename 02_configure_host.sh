@@ -318,8 +318,8 @@ clone_repo "${CAPM3REPO}" "${CAPM3BRANCH}" "${CAPM3PATH}" "${CAPM3COMMIT}"
 detect_mismatch "${IPAM_LOCAL_IMAGE:-}" "${IPAMPATH}"
 clone_repo "${IPAMREPO}" "${IPAMBRANCH}" "${IPAMPATH}" "${IPAMCOMMIT}"
 
-detect_mismatch "${CAPI_LOCAL_IMAGE:-}" "${CAPIPATH}"
-clone_repo "${CAPIREPO}" "${CAPIBRANCH}" "${CAPIPATH}" "${CAPICOMMIT}"
+#detect_mismatch "${CAPI_LOCAL_IMAGE:-}" "${CAPIPATH}"
+#clone_repo "${CAPIREPO}" "${CAPIBRANCH}" "${CAPIPATH}" "${CAPICOMMIT}"
 
 detect_mismatch "${IRSO_LOCAL_IMAGE:-}" "${IRSOPATH}"
 clone_repo "${IRSOREPO}" "${IRSOBRANCH}" "${IRSOPATH}" "${IRSOCOMMIT}"

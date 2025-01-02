@@ -549,10 +549,12 @@ install_clusterctl()
 }
 
 if ! [[ -x "$(command -v clusterctl)" ]]; then
-    install_clusterctl
+#    install_clusterctl
+     echo "tmp delete install_clusterctl"   
 elif [[ "$(clusterctl version | grep -o -P '(?<=GitVersion:").*?(?=",)')" != "${CAPIRELEASE}" ]]; then
     sudo rm /usr/local/bin/clusterctl
-    install_clusterctl
+#    install_clusterctl
+     echo "tmp delete install_clusterctl"
 fi
 
 #
@@ -727,8 +729,10 @@ build_ipxe_firmware
 start_management_cluster
 kubectl create namespace metal3
 
-patch_clusterctl
-launch_cluster_api_provider_metal3
+#patch_clusterctl
+#launch_cluster_api_provider_metal3
+kubectl apply -f cert-manager.yaml
+sleep 80s
 BMO_NAME_PREFIX="${NAMEPREFIX}"
 launch_baremetal_operator
 if [[ "${USE_IRSO}" = true ]]; then

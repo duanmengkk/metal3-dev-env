@@ -266,8 +266,8 @@ export MARIADB_TAG="${MARIADB_TAG:-latest}"
 export IRSO_TAG="${IRSO_TAG:-main@sha256:8fe5e8338d791550cc53d28ae9b63bd4ce3ed687ce147ea33021c21379170a33}"
 
 # Docker Hub proxy registry (or docker.io if no proxy)
-export DOCKER_HUB_PROXY="${DOCKER_HUB_PROXY:-docker.io}"
-
+#export DOCKER_HUB_PROXY="${DOCKER_HUB_PROXY:-docker.io}"
+export DOCKER_HUB_PROXY="${DOCKER_HUB_PROXY:-m.daocloud.io/docker.io}"
 # Docker registry for local images
 export DOCKER_REGISTRY_IMAGE="${DOCKER_REGISTRY_IMAGE:-${DOCKER_HUB_PROXY}/library/registry:2.7.1}"
 
@@ -378,7 +378,7 @@ export MINIKUBE_VERSION="${MINIKUBE_VERSION:-v1.34.0}"
 export KIND_VERSION="${KIND_VERSION:-v0.24.0}"
 export KIND_NODE_IMAGE_VERSION="${KIND_NODE_IMAGE_VERSION:-v1.32.0}"
 export KIND_NODE_IMAGE="${KIND_NODE_IMAGE:-${DOCKER_HUB_PROXY}/kindest/node:${KIND_NODE_IMAGE_VERSION}}"
-
+#export KIND_NODE_IMAGE="m.daocloud.io/docker.io/kindest/node:v1.32.0"
 # Tilt
 export TILT_VERSION="${TILT_VERSION:-v0.32.3}"
 export TILT_SHA256="${TILT_SHA256:-b30ebbba68d4fd04f8afa11efc439515241dbcc2582eac2ced3e9fad09ce8318}"
